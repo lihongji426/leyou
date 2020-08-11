@@ -1,0 +1,14 @@
+server:
+  port: 10086 # tomcat端口
+spring:
+  application:
+    name: leyou-registry # 配置服务名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka # 向注册中心添加服务
+    register-with-eureka: false # 禁止自己当做服务注册
+    fetch-registry: false # 设置自己就是注册中心，不用去注册中心获取其他服务的地址
+  server:
+    enable-self-preservation: false # 关闭自我保护
+    eviction-interval-timer-in-ms: 10000 # 设置清理无效链接为10s
